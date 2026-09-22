@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "copyparty-ui"
+version = "0.1.0"
+description = "A modern, Google Drive-style web interface for copyparty."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [
+    { name = "opticsraybender", email = "324163338+opticsraybender@users.noreply.github.com" },
+]
+keywords = ["copyparty", "file-server", "web-ui"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: Microsoft :: Windows",
+    "Topic :: Internet :: WWW/HTTP :: HTTP Servers",
+]
+
+[project.urls]
+Homepage = "https://github.com/opticsraybender/copyparty-ui"
+Upstream = "https://github.com/9001/copyparty"
+
+[project.optional-dependencies]
+pptx = ["pillow", "python-pptx"]
+
+[project.scripts]
+copyparty-ui = "copyparty_ui.cli:main"
+
+[tool.setuptools]
+package-dir = { "" = "src" }
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+copyparty_ui = ["vendor/copyparty-sfx.py", "webui/index.html"]

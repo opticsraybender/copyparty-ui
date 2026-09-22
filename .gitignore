@@ -1,0 +1,7 @@
+# Python build/cache artifacts (not the wheel itself — dist/ is intentionally tracked)
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+build/
+src/*.egg-info/
